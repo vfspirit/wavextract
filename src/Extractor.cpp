@@ -66,5 +66,7 @@ void Extractor::_free() {
 	for (WaveFile *waveFile : *this) {
 		delete waveFile;
 	}
-	fclose(_file);
+	if (_file) {
+		fclose(_file);
+	}
 }
